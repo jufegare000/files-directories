@@ -24,6 +24,7 @@ int main(int argc, char *argv[])
         perror("Error: numero de lineas inválido (debe ser un número negativo)");
         return (-1);
     }
+
     linesNumber=linesNumber*-1;
    
     fp = fopen(fileName, "r");
@@ -38,8 +39,7 @@ int main(int argc, char *argv[])
         }
         pos--;
     }
-
-     while ((getline(&line, &len, fp)) != -1) {
+    while ((getline(&line, &len, fp)) != -1) {
         printf("line: %s", line);
     }
 
